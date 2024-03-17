@@ -72,20 +72,15 @@ int main(int argc, char *argv[]) {
 
   ros::NodeHandle n;
 
-  //ros::Publisher command_pub = n.advertise<ackermann_msgs::AckermannDriveStamped>("/drive", 1);
+
   ros::Publisher command_pub = n.advertise<ackermann_msgs::AckermannDriveStamped>("/keyboard_mode", 1);
-  ros::Publisher mode_pub = n.advertise<std_msgs::String>("/mode", 1);
+
   float speed = 0.0;
   float angle = 0.0;
 
   while(ros::ok()) {
     char input  = getch();
-    if(input == 'f'){
-      mode_msg.data = 'f';
-    }else{
-      mode_msg.data = 'k';
-    }
-    mode_pub.publish(mode_msg);
+
     unsigned index = keyToIndex(input);
     speed = mapping[index][0];
     angle = mapping[index][1];

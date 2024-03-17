@@ -68,19 +68,21 @@ unsigned keyToIndex(char message) {
 }
 
 int main(int argc, char *argv[]) {
-  ros::init(argc, argv, "keyboard_teleop");
+  ros::init(argc, argv, "keyboard_teleop2"); 
 
   ros::NodeHandle n;
 
-  //ros::Publisher command_pub = n.advertise<ackermann_msgs::AckermannDriveStamped>("/drive", 1);
-  ros::Publisher command_pub = n.advertise<ackermann_msgs::AckermannDriveStamped>("/keyboard_mode", 1);
+  
+  ros::Publisher command_pub = n.advertise<ackermann_msgs::AckermannDriveStamped>("/keyborad_mode", 1);
   ros::Publisher mode_pub = n.advertise<std_msgs::String>("/mode", 1);
   float speed = 0.0;
   float angle = 0.0;
 
   while(ros::ok()) {
     char input  = getch();
-    if(input == 'f'){
+    if(input == 'p'){
+      mode_msg.data = 'p';
+    }else if(input == 'f'){
       mode_msg.data = 'f';
     }else{
       mode_msg.data = 'k';

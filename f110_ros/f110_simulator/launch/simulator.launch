@@ -20,10 +20,24 @@
   <!--
   <node pkg="f110_simulator" name="new node's name" type="new file name" output="screen"/>
   -->
-  <node pkg="f110_simulator" name="pid_controller" type="pid_controller" output="screen"/>
+  
+  
   <!--<node pkg="f110_simulator" name="mux" type="mux" output="screen"/>
+  <node pkg="f110_simulator" name="keyboard_teleop" type="keyboard_teleop" output="screen"/>
+  <node pkg="f110_simulator" name="ftg" type="ftg" output="screen"/>-->
+
+
+  <node pkg="f110_simulator" name="mux_aeb" type="mux_aeb" output="screen"/>
+  <node pkg="f110_simulator" name="AEB" type="AEB" output="screen"/>
+  <node pkg="f110_simulator" name="keyboard_teleop_aeb" type="keyboard_teleop_aeb" output="screen"/>
+  
+<!--
+  <node pkg="f110_simulator" name="mux_pid" type="mux_pid" output="screen"/>
+  <node pkg="f110_simulator" name="keyboard_teleop_pid" type="keyboard_teleop_pid" output="screen"/>
   <node pkg="f110_simulator" name="ftg" type="ftg" output="screen"/>
-  <node pkg="f110_simulator" name="keyboard_teleop" type="keyboard_teleop" output="screen"/>-->
+  <node pkg="f110_simulator" name="pid_controller2" type="pid_controller2" output="screen"/>-->
+  
+  
   <node pkg="f110_simulator" name="js_driver" type="js_driver" output="screen"/>
 
   <!--<node pkg="f110_simulator" name="random" type="random" output="screen"/>-->

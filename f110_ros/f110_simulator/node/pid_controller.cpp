@@ -58,15 +58,12 @@ double pd_controller(const sensor_msgs::LaserScan& laserscan){
 
   float new_angle = std::max(min_steer, std::min(max_steer, u_t));
 
-  std::cout<<"new_angle:"<<new_angle<<std::endl;
-  std::cout<<"*minit:"<<*minit<<std::endl;
-  std::cout<<"angle:"<<angle<<std::endl;
-  std::cout<<"err:"<<err<<std::endl;
+
   return new_angle;
 }
 
 int main(int argc, char *argv[]) {
-  ros::init(argc, argv, "ftg");
+  ros::init(argc, argv, "pid");
   ros::NodeHandle n;
   //ros::Publisher command_pub = n.advertise<ackermann_msgs::AckermannDriveStamped>("/drive", 1);
   ros::Publisher command_pub = n.advertise<ackermann_msgs::AckermannDriveStamped>("/drive", 1);
